@@ -7,7 +7,7 @@ use usb_device::bus::{InterfaceNumber, StringIndex, UsbBus, UsbBusAllocator};
 use usb_device::class::{ControlIn, ControlOut, UsbClass};
 use usb_device::control;
 use usb_device::control::{Recipient, RequestType};
-use usb_device::descriptor::{DescriptorWriter, lang_id::LangID};
+use usb_device::descriptor::{lang_id::LangID, DescriptorWriter};
 use usb_device::endpoint::{EndpointAddress, EndpointIn};
 use usb_device::UsbError;
 
@@ -120,7 +120,11 @@ impl<B: UsbBus, D: HidDevice> HidClass<'_, B, D> {
         }
     }
 
-    pub fn new_with_polling_interval(device: D, alloc: &UsbBusAllocator<B>, interval: u8) -> HidClass<'_, B, D> {
+    pub fn new_with_polling_interval(
+        device: D,
+        alloc: &UsbBusAllocator<B>,
+        interval: u8,
+    ) -> HidClass<'_, B, D> {
         let max_packet_size = device.max_packet_size();
         HidClass {
             device,
@@ -196,7 +200,7 @@ impl<B: UsbBus, D: HidDevice> UsbClass<B> for HidClass<'_, B, D> {
 
         let report_descriptor = self.device.report_descriptor();
         let descriptor_len = report_descriptor.len();
-        if descriptor_len > u16::max_value() as usize {
+        if descriptor_len > u16::MAX as usize {
             return Err(UsbError::InvalidState);
         }
         let descriptor_len = (descriptor_len as u16).to_le_bytes();

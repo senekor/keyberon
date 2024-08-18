@@ -8,7 +8,7 @@ are interconected by the user of the crate, you can use only the parts
 you are interested in or easily insert your own code in between.
 
 This crate is a no_std crate, running on stable rust. To use it on a
-given MCU, you need GPIO throw the [embedded hal
+given MCU, you need GPIO through the [embedded hal
 crate](https://crates.io/crates/embedded-hal) to read the key states,
 and the [usb-device crate](https://crates.io/crates/usb-device) for
 USB communication.

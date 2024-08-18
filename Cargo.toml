@@ -2,7 +2,7 @@
 name = "keyberon"
 version = "0.2.0"
 authors = ["Guillaume Pinot <texitoi@texitoi.eu>", "Robin Krahl <robin.krahl@ireas.org>"]
-edition = "2018"
+edition = "2021"
 description = "Pure Rust keyboard firmware."
 documentation = "https://docs.rs/keyberon"
 repository = "https://github.com/TeXitoi/keyberon"

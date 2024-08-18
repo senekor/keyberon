@@ -8,7 +8,7 @@ are interconected by the user of the crate, you can use only the parts
 you are interested in or easily insert your own code in between.
 
 This crate is a no_std crate, running on stable rust. To use it on a
-given MCU, you need GPIO throw the [embedded hal
+given MCU, you need GPIO through the [embedded hal
 crate](https://crates.io/crates/embedded-hal) to read the key states,
 and the [usb-device crate](https://crates.io/crates/usb-device) for
 USB communication.
@@ -60,7 +60,7 @@ keyboard (STM32F072 based).
 
 [Arisu handwired](https://github.com/help-14/arisu-handwired) using STM32F401.
 
-![Arisu handwired](https://camo.githubusercontent.com/4fca994ac2b7c1b1874d4331c2428cac211ff80c2891c75c971d15630ef0a948/68747470733a2f2f692e696d6775722e636f6d2f30334c356f63702e6a7067)
+![Arisu handwired](https://camo.githubusercontent.com/78ea99b5e8a884d8182c9764bcb52f3fe13d47d102da6a7d80e3a82e9abcb723/68747470733a2f2f692e696d6775722e636f6d2f30334c356f63702e6a7067)
 
 ## Features
 
